@@ -1,0 +1,65 @@
+
+@keyframes rotate{
+	100% { 
+        transform: rotate(0deg); 
+    } 
+    20% { 
+        transform: rotateY(90deg) rotateZ(90deg); 
+    } 
+    40% { 
+        transform: rotateY(180deg) rotateZ(-90deg); 
+    } 
+    60% { 
+        transform: rotateY(270deg) rotateZ(90deg); 
+    } 
+    80% { 
+        transform: rotateY(360deg) rotateZ(-90deg); 
+    } 
+}
+
+
+.cube{
+	height:200px;
+	width:200px;
+	position: relative;
+	margin:100px;
+	transform-style: preserve-3d;
+/*	perspective: 400px;*/
+	transform: rotateY(-25deg) rotateX(-25deg);
+	animation: rotate 4s ease-in-out infinite; alternate;
+}
+.face{
+	height:100%;
+	width:100%;
+	position:absolute;
+	top:20%;
+	left:20%;
+	transition: all 1s;
+}
+.one{
+	background-color: skyblue;
+}
+.two{
+	background-color: orange;
+
+	transform: rotateY(90deg) translatez(-100px) translateX(-100px) ;
+	
+}
+.three{
+	background-color: red;
+
+	transform: rotateY(90deg) translatez(100px) translateX(-100px) ;
+	
+}
+.four{
+	background-color: blue;
+	transform: translatez(200px);
+}
+.five{
+	background-color: green;
+	transform: translateY(100px) translateZ(100px) rotateX(90deg);
+}
+.six{
+	background-color: yellow;
+	transform: translateY(-100px) translateZ(100px) rotateX(90deg);
+}
